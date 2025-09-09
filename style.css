@@ -1,0 +1,113 @@
+:root{
+  --bg:#fff; --text:#111; --muted:#8e8e8e; --line:#e5e5e5; --card:#fff;
+  --ig-grad: linear-gradient(45deg,#f58529,#fd1d1d,#dd2a7b,#8134af,#515bd4);
+  --notice-bg:#0b1220; --notice-fg:#fff;
+  --action-size: 40px; /* 피드 액션 아이콘 크기 */
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font:14px/1.5 -apple-system,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+img{display:block;max-width:100%}
+.container{max-width:975px;margin:0 auto;padding:0 16px}
+
+/* 상단 간판 */
+.ig-banner{background:var(--ig-grad)}
+.ig-banner__inner{min-height:180px;display:flex;align-items:center;justify-content:center;gap:14px;padding:22px}
+.ig-banner__logo{width:48px;height:48px;border-radius:12px}
+.ig-banner__title{color:#fff;font-size:clamp(38px,7.2vw,54px);font-weight:900}
+
+/* 공지 틱커 */
+.notice{background:var(--notice-bg);color:var(--notice-fg);border-bottom:1px solid rgba(255,255,255,.08);overflow:hidden}
+.notice__track{display:flex;gap:56px;white-space:nowrap;font-weight:900;font-size:clamp(17px,2.8vw,24px);letter-spacing:.2px;padding:12px 16px;animation:marquee 18s linear infinite}
+.notice:hover .notice__track{animation-play-state:paused}
+.notice__item{display:flex;align-items:center;gap:12px}
+.megaphone{width:20px;height:20px;color:#ffd166;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* 네비 */
+.nav{border-bottom:1px solid var(--line);background:var(--bg)}
+.nav__inner{height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav__search{flex:0 1 320px}
+.nav__search input{width:100%;height:36px;border:1px solid var(--line);border-radius:8px;padding:0 12px;background:#fafafa}
+.nav__icons{display:flex;gap:10px}
+.ic{background:none;border:0;cursor:pointer;font-size:20px}
+.avatar-btn img{width:28px;height:28px;border-radius:50%}
+
+/* 레이아웃 */
+.feed-area{display:grid;grid-template-columns:1fr;gap:24px;padding:20px 0 120px}
+
+/* 스토리 — 확대 더 티나게 & 안 짤림 */
+.stories{
+  border:1px solid var(--line);border-radius:12px;background:var(--card);
+  padding:22px 12px 14px;overflow:visible;
+}
+.stories__track{display:flex;gap:16px;overflow:auto}
+.story{width:100px;flex:0 0 auto;text-align:center}
+.story .ring{padding:4px;border-radius:50%;background:var(--ig-grad)}
+.story .ring .inner{padding:2px;border-radius:50%;background:#fff}
+.story .frame{width:90px;height:90px;border-radius:50%;overflow:hidden;position:relative}
+.story .pan{display:inline-flex}
+.story .pan img{
+  width:90px;height:90px;object-fit:cover;object-position:center;
+  transform-origin:center center;will-change:transform;animation:zoomPulse 8s ease-in-out infinite;
+}
+.story:nth-child(1) .pan img{animation-delay:0s}
+.story:nth-child(2) .pan img{animation-delay:1.2s}
+.story:nth-child(3) .pan img{animation-delay:2.4s}
+.story:nth-child(4) .pan img{animation-delay:3.6s}
+.story:nth-child(5) .pan img{animation-delay:4.8s}
+.story:nth-child(6) .pan img{animation-delay:6.0s}
+.story:nth-child(7) .pan img{animation-delay:7.2s}
+@keyframes zoomPulse{0%,100%{transform:scale(1)}18%{transform:scale(1.25)}36%{transform:scale(1)}}
+.story p{margin:8px 0 0;font-size:12px}
+
+/* 포스트 카드 */
+.post{border:1px solid var(--line);border-radius:12px;margin-top:24px;background:var(--card);overflow:hidden}
+.post__head{display:flex;align-items:center;gap:10px;padding:10px}
+.post__head img{width:32px;height:32px;border-radius:50%}
+.post__head .name{font-weight:700}
+.post__media img{width:100%}
+
+/* 리액션 바 (컬러풀 + 크기↑) */
+.post__actions{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.post__left{display:flex;gap:12px}
+.action{background:none;border:0;cursor:pointer;padding:4px;display:flex;align-items:center;gap:6px;font-weight:700}
+.action svg{width:var(--action-size);height:var(--action-size)}
+.action .count{min-width:20px;text-align:left}
+.action.heart svg path{fill:#ff3b3b}
+.action.fire  svg path{fill:#ff8a00}
+.action.love  svg path{fill:#ec4899}
+.action.lol   svg path{fill:#22c55e}
+.action.active{filter:drop-shadow(0 2px 6px rgba(0,0,0,.15))}
+
+/* 멤버 태그 라인 */
+.member-tags{padding:0 12px 6px;color:#555;font-size:13px}
+.member-tags b{font-weight:700}
+
+/* 댓글 영역 */
+.comments{padding:0 12px 10px}
+.comment-item{display:flex;gap:8px;margin:6px 0}
+.comment-item img{width:28px;height:28px;border-radius:50%}
+.comment-item .bubble{background:#f7f7f7;border:1px solid #eee;padding:8px 10px;border-radius:12px}
+.comment-item .bubble b{margin-right:6px}
+.comment-form{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:10px 12px}
+.comment-form img{width:28px;height:28px;border-radius:50%}
+.comment-form input{flex:1;height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px}
+.comment-form button{height:38px;padding:0 14px;border:0;border-radius:10px;background:#0095f6;color:#fff;font-weight:700;cursor:pointer}
+.comment-form small{color:#777}
+
+/* 추가 카드(공지/넷플릭스 낚시) */
+.extra-cards{padding:8px 12px 14px;display:grid;gap:10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;display:flex;align-items:center;gap:12px}
+.card .icon-wrap{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#111;color:#fff}
+.card .title{font-weight:800;margin:0}
+.card .desc{margin:4px 0 0;color:#555;font-size:13px}
+.card.netflix .icon-wrap{background:#e50914}
+.card.netflix .title{color:#e50914}
+
+/* 하단 탭바 */
+.floating-tabbar{
+  position:fixed;left:0;right:0;bottom:0;height:68px;background:#fff;border-top:1px solid var(--line);
+  display:flex;justify-content:space-around;align-items:center;z-index:100
+}
+.floating-tabbar .btn{background:none;border:0;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;font-size:24px}
+.floating-tabbar .profile-icon{width:32px;height:32px;border-radius:50%}

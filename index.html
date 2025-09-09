@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>광주패거리 벙개 친목 트레킹 커벙</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/dokkasi.png">
+</head>
+<body>
+
+  <!-- 상단 간판 -->
+  <div class="ig-banner">
+    <div class="ig-banner__inner">
+      <img src="images/dokkasi.png" alt="광주패거리 로고" class="ig-banner__logo" />
+      <h1 class="ig-banner__title">광주패거리</h1>
+    </div>
+  </div>
+
+  <!-- 공지 틱커 (딥 네이비 바 + 흰 텍스트) -->
+  <div class="notice">
+    <div class="notice__track" aria-label="공지사항">
+      <span class="notice__item">
+        <svg class="megaphone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h2l6 4V5L6 9H4a1 1 0 0 0-1 1Z" fill="currentColor"/><path d="M9 14v4a2 2 0 0 1-2 2H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        정모공지 9월 19일 금요일 7시 – 세부사항 추후 업데이트
+      </span>
+      <span class="notice__item">
+        <svg class="megaphone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h2l6 4V5L6 9H4a1 1 0 0 0-1 1Z" fill="currentColor"/><path d="M9 14v4a2 2 0 0 1-2 2H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        정모공지 9월 19일 금요일 7시 – 세부사항 추후 업데이트
+      </span>
+    </div>
+  </div>
+
+  <!-- 상단 네비 -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <div class="nav__search"><input type="search" placeholder="검색" aria-label="검색" /></div>
+      <nav class="nav__icons">
+        <button class="ic" aria-label="홈">🏠</button>
+        <button class="ic" aria-label="검색">🔍</button>
+        <button class="ic" aria-label="만들기">➕</button>
+        <button class="avatar-btn" aria-label="프로필">
+          <img src="images/dokkasi.png" alt="독까시" />
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 본문 -->
+  <main class="container feed-area">
+    <section class="col-left">
+      <!-- 스토리 -->
+      <div class="stories">
+        <div class="stories__track" id="storiesTrack"></div>
+      </div>
+
+      <!-- 피드 -->
+      <div id="feed"></div>
+    </section>
+  </main>
+
+  <!-- 하단 탭바 -->
+  <nav class="floating-tabbar">
+    <button class="btn home" aria-label="홈">🏠</button>
+    <button class="btn search" aria-label="검색">🔍</button>
+    <button class="btn add big" aria-label="만들기">➕</button>
+    <button class="btn heart" aria-label="알림">❤️</button>
+    <button class="btn profile" aria-label="프로필">
+      <img src="images/dokkasi.png" alt="내 프로필" class="profile-icon"/>
+    </button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
